@@ -11,8 +11,12 @@ public class AbstractClass {
         animals.add(dog);
         animals.add(new Dog("German Shepard", "big", 150));
         animals.add(new Fish("Goldfish", "small", 0.5));
+        animals.add(new Horse("Rouch", "large", 1000));
         for (Animal animal : animals) {
             doAnimalStuff(animal);
+            if (animal instanceof Mammal currentMammal) {
+                currentMammal.shedHair();
+            }
         }
     }
     private static void doAnimalStuff(Animal animal) {

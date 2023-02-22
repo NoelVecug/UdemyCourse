@@ -1,5 +1,16 @@
 package Task_4;
+abstract class Mammal extends Animal {
+    public Mammal(String type, String size, double weight) {
+        super(type, size, weight);
+    }
 
+    @Override
+    public void move(String speed) {
+        System.out.print(getType() + "");
+        System.out.println(speed.equals("slow") ? "walk" : "runs");
+    }
+    public abstract void shedHair();
+}
 public abstract class Animal {
     protected String type;
     private String size;
@@ -12,4 +23,7 @@ public abstract class Animal {
     }
     public abstract void move(String speed);
     public abstract void makeNoise();
+    public String getType() {
+        return getClass().getSimpleName() + " (" + type + ") ";
+    }
 }
